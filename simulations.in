@@ -1,0 +1,60 @@
+Simulation    w      h      dx      dy
+----------------------------------------
+A-1         1.70    2.30   0.100   0.100
+A-2         1.70    2.30   0.020   0.020
+B-1         0.80    0.51   0.040   0.030
+B-2         0.80    0.51   0.016   0.010
+C-1         1.84    1.20   0.092   0.050
+C-2         1.84    1.20   0.040   0.100
+C-3         1.84    1.20   0.010   0.010
+TEST-1      2.00    1.00   0.010   0.010
+
+Boundary Conditions
+-------------------------------------------
+A-1
+TOP    CONST  300.0   0.0   1.70   // T, xa,xb
+BOTTOM CONST    0.0   0.0   1.70
+LEFT   CONST    0.0   0.0   2.30
+RIGHT  CONST    0.0   0.0   2.30
+
+A-2
+TOP    CONST  300.0   0.0   1.70
+BOTTOM CONST    0.0   0.0   1.70
+LEFT   CONST    0.0   0.0   2.30
+RIGHT  CONST    0.0   0.0   2.30
+
+B-1
+TOP    SINE   250.0  2.0  0.0  0.80   // Ta, k, xa, xb  
+BOTTOM CONST    0.0  0.0   0.80
+LEFT   CONST    0.0  0.0   0.51
+RIGHT  CONST    0.0  0.0   0.51
+
+B-2
+TOP    SINE   250.0  2.0  0.0  0.80  // Ta, k, xa, xb 
+BOTTOM CONST    0.0  0.0   0.80
+LEFT   CONST    0.0  0.0   0.51
+RIGHT  CONST    0.0  0.0   0.51
+
+C-1
+TOP    SINE   300.0  1.5   0.0   1.84
+BOTTOM CONST    0.0  0.0  1.84
+LEFT   CONST    0.0  0.0  1.20
+RIGHT  INSULATED     0.0  1.20  // ya, yb
+
+C-2
+TOP    SINE   300.0  1.5   0.0   1.84
+BOTTOM CONST    0.0  0.0  1.84
+LEFT   CONST    0.0  0.0  1.20
+RIGHT  INSULATED     0.0  1.20
+
+C-3
+TOP    SINE   300.0  1.5   0.0   1.84
+BOTTOM CONST    0.0  0.0  1.84
+LEFT   CONST    0.0  0.0  1.20
+RIGHT  INSULATED     0.0  1.20
+
+TEST-1
+TOP POLY    250.0 550.0 0.25 1.70 1.0 -1.5 // Ta,Tb,xa,xb,ma,mb
+BOTTOM COSINE  575.0 1.20 1.80  // Tm,xa,xb
+LEFT   CONST   450.0 0.25 0.65  // Tc,ya,yb
+RIGHT  INSULATED 0.0 1.00       // ya,yb
